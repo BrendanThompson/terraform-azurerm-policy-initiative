@@ -1,0 +1,38 @@
+name: "global-core-initiative"
+display_name: Global Core Inititive
+description: Core initiative scoped to the global level
+policies:
+  AllowedLocations:
+    type: "Custom"
+    file: allowed_locations.json
+    default:
+      parameters:
+        listOfAllowedLocations:
+          value:
+            - australiaeast
+      effect: audit
+    dev:
+      parameters:
+        listOfAllowedLocations:
+          value:
+            - australiaeast
+            - uswest
+      effect: deny
+  CostCentreTag:
+    type: "BuiltIn"
+    id: 1e30110a-5ceb-460c-a204-c1c3969c6d62
+    default:
+      parameters:
+        tagName:
+          value: "CostCentre"
+        tagValue:
+          value: "abc-123"
+  OwnerTag:
+    type: "BuiltIn"
+    id: 1e30110a-5ceb-460c-a204-c1c3969c6d62
+    default:
+      parameters:
+        tagName:
+          value: "Owner"
+        tagValue:
+          value: "BLT"

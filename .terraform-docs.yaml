@@ -1,0 +1,22 @@
+formatter: "markdown table"
+content: |-
+  # Azure Policy Initiative Module
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  ## Example(s)
+
+  ```hcl
+  {{ include "examples/basic/main.tf"}}
+  ```
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    {{ .Content }}
